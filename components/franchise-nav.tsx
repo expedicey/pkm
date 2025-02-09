@@ -28,15 +28,6 @@ export function FranchiseNav({ className, ...props }: React.HTMLAttributes<HTMLE
         Inventory & Lead Time
       </Link>
       <Link
-        href="/franchise-dashboard/orders"
-        className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
-          pathname === "/franchise-dashboard/orders" ? "text-primary" : "text-muted-foreground",
-        )}
-      >
-        Orders
-      </Link>
-      <Link
         href="/franchise-dashboard/order-management"
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",

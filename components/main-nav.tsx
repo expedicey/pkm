@@ -21,7 +21,8 @@ export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElemen
               !pathname.startsWith("/dashboard/order-management") &&
               !pathname.startsWith("/dashboard/franchises") &&
               !pathname.startsWith("/dashboard/finance") &&
-              !pathname.startsWith("/dashboard/franchise-performance")
+              !pathname.startsWith("/dashboard/franchise-performance") &&
+              !pathname.startsWith("/dashboard/analytics-reports")
               ? "text-primary"
               : "text-muted-foreground",
           )}
@@ -85,6 +86,15 @@ export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElemen
         )}
       >
         Performance
+      </Link>
+      <Link
+        href="/dashboard/analytics-reports"
+        className={cn(
+          "text-sm font-medium transition-colors hover:text-primary",
+          pathname === "/dashboard/analytics-reports" ? "text-primary" : "text-muted-foreground",
+        )}
+      >
+        Analytics & Reports
       </Link>
     </nav>
   )
