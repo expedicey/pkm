@@ -15,6 +15,16 @@ import { OperatorActions } from "@/components/operator-actions"
 import { CentralizedProductionCalendar } from "@/components/centralized-production-calendar"
 import { CapacityUtilization } from "@/components/capacity-utilization"
 import { ForecastingTools } from "@/components/forecasting-tools"
+import { RevenueAndCostAnalytics } from "@/components/revenue-and-cost-analytics"
+import { TrendAnalysis } from "@/components/trend-analysis"
+import { ComplianceMonitoring } from "@/components/compliance-monitoring"
+import { FranchiseAnalyticsDashboard } from "@/components/franchise-analytics-dashboard"
+import { UnifiedPaymentReconciliation } from "@/components/unified-payment-reconciliation"
+import { PaymentHistory } from "@/components/payment-history"
+import { OutstandingBalances } from "@/components/outstanding-balances"
+import { ReceiptsStatements } from "@/components/receipts-statements"
+import { WasteTracking } from "@/components/waste-tracking"
+import { ProductionInsights } from "@/components/production-insights"
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -63,12 +73,8 @@ export default function DashboardPage() {
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="calendar">Calendar</TabsTrigger>
               <TabsTrigger value="activity">Activity</TabsTrigger>
-              <TabsTrigger value="analytics" disabled>
-                Analytics
-              </TabsTrigger>
-              <TabsTrigger value="reports" disabled>
-                Reports
-              </TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="reports">Reports</TabsTrigger>
             </TabsList>
             <TabsContent value="overview" className="space-y-4">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -198,6 +204,89 @@ export default function DashboardPage() {
                   <OperatorActions />
                 </CardContent>
               </Card>
+            </TabsContent>
+            <TabsContent value="analytics" className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="col-span-2">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Revenue and Cost Analysis</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <RevenueAndCostAnalytics />
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-1">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Compliance Monitoring</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ComplianceMonitoring />
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="col-span-2">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Trend Analysis</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <TrendAnalysis />
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-1">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Franchise Analytics</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <FranchiseAnalyticsDashboard />
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </TabsContent>
+            <TabsContent value="reports" className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="col-span-2">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Financial Reports</CardTitle>
+                      <CardDescription>View and generate financial statements and receipts</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ReceiptsStatements />
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="col-span-1">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Waste Management Reports</CardTitle>
+                      <CardDescription>Track and analyze waste metrics</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <WasteTracking />
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+              <div className="grid gap-4">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Production Reports</CardTitle>
+                    <CardDescription>Detailed insights into production performance and efficiency</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ProductionInsights />
+                  </CardContent>
+                </Card>
+              </div>
             </TabsContent>
           </Tabs>
         </div>
