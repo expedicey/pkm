@@ -1,33 +1,20 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import Link from "next/link"
+import { LoginForm } from "@/components/login-form"
+import { ThemeToggle } from "@/components/theme-toggle"
 
-export default function LandingPage() {
+export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle>Central Hub Dashboard</CardTitle>
-            <CardDescription>Manage all franchises and operations</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild className="w-full">
-              <Link href="/dashboard">Enter Central Hub</Link>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle>Franchise Dashboard</CardTitle>
-            <CardDescription>Manage your specific franchise</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Button asChild className="w-full">
-              <Link href="/franchise-dashboard">Enter Franchise Dashboard</Link>
-            </Button>
-          </CardContent>
-        </Card>
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+      
+      {/* Background gradient elements for depth */}
+      <div className="fixed -top-40 -right-40 h-96 w-96 rounded-full bg-purple-700 dark:opacity-20 opacity-10 blur-3xl"></div>
+      <div className="fixed -bottom-40 -left-40 h-96 w-96 rounded-full bg-blue-700 dark:opacity-20 opacity-10 blur-3xl"></div>
+      
+      <div className="w-full max-w-md p-8 glass-panel">
+        <h1 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">Franchise Ordering System</h1>
+        <LoginForm />
       </div>
     </div>
   )
